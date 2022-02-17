@@ -1,0 +1,26 @@
+*.min.js
+node_modules
+
+# OS
+.DS_Store
+.idea
+.editorconfig
+.npmrc
+package-lock.json
+
+# Ignored suffix
+*.log
+*.md
+*.svg
+*.png
+*ignore
+
+## Built-files
+.cache
+dist
+build/*.js
+src/assets
+src/lib/*
+public
+
+

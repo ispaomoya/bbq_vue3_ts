@@ -2,23 +2,12 @@
 
 ## Project setup
 ```
-npm install
+npm i
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 1.配置.editorconfig文件，用来兼容多人开发用的不同ide，操作系统的代码风格
 
-### Compiles and minifies for production
+### 2.配置.prettierrc.js文件，用来代码格式化，.prettierignore文件用来忽略,先安装一下,兼容eslint和prettier，在eslintrc.js的extends中加上'plugin:prettier/recommended'，配置完后重启项目
 ```
-npm run build
+npm i prettier -D
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
