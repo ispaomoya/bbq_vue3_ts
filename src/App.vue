@@ -12,11 +12,6 @@ const route = useRoute()
 const router = useRouter()
 //绑定vue原型引用
 const { proxy }: any = getCurrentInstance()
-if (!proxy.$utils.utils.isMobile()) {
-  router.push('/pc')
-} else {
-  router.push('/')
-}
 
 </script>
 <style lang="less">

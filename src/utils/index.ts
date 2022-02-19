@@ -1,10 +1,12 @@
-import * as utils from './utils'
-
 export default {
-    utils
-  // install: function (Vue: { prototype: { $utils: Object; $validate: any } }) {
-  //   Vue.prototype.$utils = utils
-  //   Vue.prototype.$validate = validate
-  //   // Object.defineProperty(Vue.prototype, '$utils', { value: utils })
-  // },
+  /**
+  * 判断是否是移动端
+  * @returns {Boolean}
+  */
+  isMobile: () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  }
+
 }

@@ -9,6 +9,15 @@ const app = createApp(App);
 app.config.globalProperties.$utils = utils;
 //
 
+//路由
+router.beforeEach((to, from, next) => {
+    if (!utils.isMobile() && to.meta.title !== 'pc') {
+      next('/pc')
+    } else {
+      next()
+    }
+})
+// app挂载
 app
   .use(store)
   .use(router)
