@@ -1,11 +1,11 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/home/index.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component: Home,
+    component: () => import( '../views/home/index.vue'),
+    meta: { title: '首页', keepAlive: true },
   },
   {
     path: '/pc',
@@ -15,7 +15,14 @@ const routes: Array<RouteRecordRaw> = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/pc/index.vue'),
+      meta: { title: 'pc', keepAlive: false },
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import( '../views/login/index.vue'),
+      meta: { title: '登录', keepAlive: false },
+  }
 ]
 
 const router = createRouter({
