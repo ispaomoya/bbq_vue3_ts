@@ -16,14 +16,14 @@ app.config.globalProperties.$utils = utils;
 app.config.globalProperties.$Dialog = Dialog;
 app.config.globalProperties.$Toast = Toast;
 
-//路由
-router.beforeEach((to, from, next) => {
-    if (!utils.isMobile() && to.meta.title !== 'pc') {
-      next('/pc')
-    } else {
-      next()
-    }
-})
+// //路由
+// router.beforeEach((to, from, next) => {
+//     if (!utils.isMobile() && to.meta.title !== 'pc') {
+//       next('/pc')
+//     } else {
+//       next()
+//     }
+// })
 // app挂载
 app
   .use(store)
