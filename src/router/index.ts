@@ -8,11 +8,14 @@ const routes: Array<RouteRecordRaw> = [
     meta: { title: '首页', keepAlive: true },
   },
   {
+    path: '/home',
+    name: 'home',
+    component: () => import( '../views/home/index.vue'),
+    meta: { title: '首页', keepAlive: true },
+  },
+  {
     path: '/pc',
     name: 'pc',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/pc/index.vue'),
       meta: { title: 'pc', keepAlive: false },
@@ -22,7 +25,25 @@ const routes: Array<RouteRecordRaw> = [
     name: 'login',
     component: () => import( '../views/login/index.vue'),
       meta: { title: '登录', keepAlive: false },
-  }
+  },
+  {
+    path: '/circle',
+    name: 'circle',
+    component: () => import( '../views/circle/index.vue'),
+      meta: { title: '圈子', keepAlive: false },
+  },
+  {
+    path: '/me',
+    name: 'me',
+    component: () => import( '../views/me/index.vue'),
+      meta: { title: '我的', keepAlive: false },
+  },
+  {
+    path: '/message',
+    name: 'message',
+    component: () => import( '../views/message/index.vue'),
+      meta: { title: '消息', keepAlive: false },
+  },
 ]
 
 const router = createRouter({
