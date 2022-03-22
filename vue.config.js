@@ -50,4 +50,29 @@ module.exports = defineConfig({
     config.resolve.alias // 添加别名
       .set('@', resolve('src'))
   },
+  devServer: {
+    // host: '127.0.0.1',//如果你想让你的服务器可以被外部访问
+    // open: true,//跑起来是否打开浏览器
+    port: 80,//默认端口号
+    proxy: {
+      '/test': {
+        target: 'https://p.3.cn/',
+        changOrigin: true,//允许跨域
+        // ws: true, // 是否启用websockets
+        secure: false,//默认为true，是否需要携带安全证书，即https时，是需要的，设置成false就不用了
+        pathRewrite: {
+          '^/test': '',//重写路径
+        }
+      },
+      '/bbq': {
+        target: 'https://biaobaiqiang.vip',
+        changOrigin: true,//允许跨域
+        // ws: true, // 是否启用websockets
+        secure: false,//默认为true，是否需要携带安全证书，即https时，是需要的，设置成false就不用了
+        pathRewrite: {
+          '^/bbq': '',//重写路径
+        }
+      },
+    }
+  }
 })

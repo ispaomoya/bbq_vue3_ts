@@ -1,10 +1,14 @@
 // service统一出口
 import HYRequest from './request'
-
+import md5 from 'blueimp-md5'
+import sha1 from 'sha1'
 const hyRequest = new HYRequest({
   baseURL: process.env.VUE_APP_BASE_URL,
   interceptors: {
-    requestInterceptor: config => {
+    requestInterceptor: (config:any) => {
+      const time = new Date().getTime()
+      config.headers.timestamp = time
+      config.headers.signature = md5(sha1(`mall_${time}`))
       // 携带token拦截
       const token = ''
       if (token) {
