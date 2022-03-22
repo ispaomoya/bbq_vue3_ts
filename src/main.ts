@@ -8,11 +8,15 @@ import md5 from 'blueimp-md5'
 import sha1 from 'sha1'
 import '@/style/style.less'
 // 按需引入vant
-import { Button,Dialog,Toast } from 'vant'
+import { Button, Dialog, Toast, Tab, Tabs, Field, CellGroup } from 'vant'
 const app = createApp(App);
 app.use(Button)
 app.use(Dialog)
 app.use(Toast)
+app.use(Tab)
+app.use(Tabs)
+app.use(Field)
+app.use(CellGroup)
 
 // 挂载原型
 app.config.globalProperties.$utils = utils;
